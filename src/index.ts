@@ -17,6 +17,10 @@ function _getPaths(apiSpec: any) {
   return apiSpec.paths;
 }
 
+function _getComponentSchemas(apiSpec: any) {
+  return apiSpec.components.schemas;
+}
+
 const log = eitherify((data: any) => {
   console.log(inspect(data, { depth: null }));
   return data;
@@ -24,11 +28,17 @@ const log = eitherify((data: any) => {
 const parseYaml = eitherify(_parseYaml);
 const readApiSpec = eitherifyAsync(_readApiSpec);
 const getPaths = eitherify(_getPaths);
+const getComponentSchemas = eitherify(_getComponentSchemas);
 
 async function main() {
   const filePath = path.resolve(__dirname, "../api.yaml");
 
-  pipe(await pipe(wrap(filePath), readApiSpec), parseYaml, getPaths, log);
+  pipe(
+    await pipe(wrap(filePath), readApiSpec),
+    parseYaml,
+    getComponentSchemas,
+    log
+  );
 }
 
 main();
