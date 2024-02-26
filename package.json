@@ -1,0 +1,26 @@
+{
+  "name": "spike-generate-ts-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx --watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@okeeffed/eitherify": "^0.0.8",
+    "@types/node": "^20.11.20",
+    "handlebars": "^4.7.8",
+    "remeda": "^1.44.1",
+    "yaml": "^2.4.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "prettier": "^3.2.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
