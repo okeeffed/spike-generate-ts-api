@@ -83,8 +83,6 @@ async function main() {
     }
   }
 
-  console.log(parsedOperations[0]);
-
   const contractCode = pipe(wrap(parsedOperations), generateRouter);
 
   if (!contractCode.success) {

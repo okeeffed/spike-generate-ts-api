@@ -1,4 +1,5 @@
 import * as z from "zod";
+import camelCase from "lodash.camelcase";
 
 interface ApiOperation {
   path: string;
@@ -191,7 +192,24 @@ export function parseOperation(operation: OperationDetail, openAPISpec: TODO) {
   if (operation.requestBody) {
     const content = operation.requestBody.content["application/json"];
     if (content && content.schema) {
-      requestBody = parseSchema(content.schema, openAPISpec) ?? "z.void()";
+      if (content.schema.$ref) {
+        const nameOfRef = content.schema.$ref.split("/").pop();
+        if (!nameOfRef) {
+          throw new Error("Invalid $ref");
+        }
+
+        const refKey = camelCase(nameOfRef);
+
+        if (refs[refKey]) {
+          requestBody = refKey;
+        }
+
+        refs[refKey] = parseSchema(content.schema, openAPISpec) ?? "z.void()";
+
+        requestBody = refKey;
+      } else {
+        requestBody = parseSchema(content.schema, openAPISpec);
+      }
     } else {
       requestBody = "z.void()";
     }
@@ -216,18 +234,20 @@ export function parseOperation(operation: OperationDetail, openAPISpec: TODO) {
             throw new Error("Invalid $ref");
           }
 
-          if (refs[nameOfRef]) {
+          const refKey = camelCase(nameOfRef);
+
+          if (refs[refKey]) {
             return {
               statusCode,
-              body: refs[nameOfRef],
+              body: refKey,
             };
           }
 
-          refs[nameOfRef] = parseSchema(content.schema, openAPISpec);
+          refs[refKey] = parseSchema(content.schema, openAPISpec);
 
           return {
             statusCode,
-            body: refs[nameOfRef],
+            body: refKey,
           };
         } else {
           return {
@@ -254,5 +274,6 @@ export function parseOperation(operation: OperationDetail, openAPISpec: TODO) {
     responses,
     requestBody,
     operationId: operation.operationId,
+    refs,
   };
 }

@@ -17,10 +17,18 @@ const endpointPartialSrc = fs.readFileSync(
 Handlebars.registerPartial("endpoint", endpointPartialSrc);
 
 export function generateRouter(data: any): string {
-  console.log(data[0]);
+  // Create one big, uniqe ref objects of all refs
+  const refs = data.reduce((acc: Record<string, any>, endpoint: any) => {
+    return {
+      ...acc,
+      ...endpoint.refs,
+    };
+  }, {});
+
   // Generate the contract code
   const contractCode = routerTemplate({
     endpoints: data,
+    refs,
   });
 
   console.log(contractCode.slice(0, 1000));

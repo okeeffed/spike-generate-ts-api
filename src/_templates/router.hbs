@@ -3,6 +3,10 @@ import * as z from "zod";
 
 const c = initContract();
 
+{{#each refs}}
+const {{{@key}}} = {{{this}}}
+{{/each}}
+
 export const contract = c.router({
   {{#each endpoints}}
   {{> endpoint this}},
