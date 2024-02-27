@@ -1,0 +1,34 @@
+{{this.operationId}}: {
+    method: '{{method}}',
+    path: '{{path}}',
+    responses: {
+      {{#each responses}}
+      {{this.statusCode}}: {{{this.body}}},
+      {{/each}}
+    },
+    {{#if requestBody}}
+    body: {{{requestBody}}},
+    {{/if}}
+		{{#if headers}}
+    headers: z.object({
+							{{#each headers}}
+							'{{{this.name}}}': {{{this.type}}},
+							{{/each}}
+						}),
+    {{/if}}
+		{{#if query}}
+    query: z.object({
+							{{#each query}}
+							'{{{this.name}}}': {{{this.type}}},
+							{{/each}}
+						}),
+    {{/if}}
+		{{#if pathParams}}
+    pathParams: z.object({
+							{{#each pathParams}}
+							'{{{this.name}}}': {{{this.type}}},
+							{{/each}}
+						}),
+    {{/if}}
+    summary: '{{summary}}',
+  }
