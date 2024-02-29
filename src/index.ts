@@ -66,6 +66,9 @@ async function main() {
       const query = res.params.filter((param) => param.in === "query");
       const pathParams = res.params.filter((param) => param.in === "path");
 
+      const regex = /{([^}]+)}/g;
+      const updatedPathKey = pathKey.replace(regex, ":$1");
+
       parsedOperations.push({
         ...res,
         requestBody: res.requestBody
@@ -76,9 +79,9 @@ async function main() {
         headers,
         query,
         pathParams,
-        path: pathKey,
+        path: updatedPathKey,
         method: pathOperation.toUpperCase(),
-        operationId: camelcase(`${pathOperation} ${pathKey}`),
+        operationId: camelcase(`${pathOperation} ${updatedPathKey}`),
       });
     }
   }

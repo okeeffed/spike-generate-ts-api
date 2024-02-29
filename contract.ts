@@ -6032,7 +6032,7 @@ export const contract = c.router({
   },
   putV1AdminGlobalWalletsWalletIdConfigurationsAll: {
     method: "PUT",
-    path: "/v1/admin/global/wallets/{wallet_id}/configurations/all",
+    path: "/v1/admin/global/wallets/:wallet_id/configurations/all",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6064,7 +6064,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityUsersUserId: {
     method: "GET",
-    path: "/v1/admin/identity/users/{user_id}",
+    path: "/v1/admin/identity/users/:user_id",
     responses: {
       200: c.type<z.infer<typeof getProfileByUserIdResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6082,7 +6082,7 @@ export const contract = c.router({
   },
   deleteV1AdminIdentityUsersUserId: {
     method: "DELETE",
-    path: "/v1/admin/identity/users/{user_id}",
+    path: "/v1/admin/identity/users/:user_id",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6098,7 +6098,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityUsersUserIdBlock: {
     method: "POST",
-    path: "/v1/admin/identity/users/{user_id}/block",
+    path: "/v1/admin/identity/users/:user_id/block",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6114,7 +6114,7 @@ export const contract = c.router({
   },
   deleteV1AdminIdentityUsersUserIdBlock: {
     method: "DELETE",
-    path: "/v1/admin/identity/users/{user_id}/block",
+    path: "/v1/admin/identity/users/:user_id/block",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6130,7 +6130,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityWalletsWalletIdProfiles: {
     method: "GET",
-    path: "/v1/admin/identity/wallets/{wallet_id}/profiles",
+    path: "/v1/admin/identity/wallets/:wallet_id/profiles",
     responses: {
       200: c.type<z.infer<typeof listProfilesByWalletIdResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6151,7 +6151,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityWalletsWalletIdUsers: {
     method: "GET",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users",
+    path: "/v1/admin/identity/wallets/:wallet_id/users",
     responses: {
       200: c.type<z.infer<typeof listProfilesByWalletIdResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6172,7 +6172,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityWalletsWalletIdProfilesUserId: {
     method: "GET",
-    path: "/v1/admin/identity/wallets/{wallet_id}/profiles/{user_id}",
+    path: "/v1/admin/identity/wallets/:wallet_id/profiles/:user_id",
     responses: {
       200: c.type<z.infer<typeof getProfileByUserIdResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6191,7 +6191,7 @@ export const contract = c.router({
   },
   deleteV1AdminIdentityWalletsWalletIdProfilesUserId: {
     method: "DELETE",
-    path: "/v1/admin/identity/wallets/{wallet_id}/profiles/{user_id}",
+    path: "/v1/admin/identity/wallets/:wallet_id/profiles/:user_id",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6208,7 +6208,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityWalletsWalletIdUsersUserIdProfile: {
     method: "GET",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/profile",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/profile",
     responses: {
       200: c.type<z.infer<typeof adminProfileUserWallet>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6227,7 +6227,7 @@ export const contract = c.router({
   },
   getV1AdminIdentityWalletsWalletIdUsersUserId: {
     method: "GET",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id",
     responses: {
       200: c.type<z.infer<typeof adminProfileUserWallet>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6246,7 +6246,7 @@ export const contract = c.router({
   },
   patchV1AdminIdentityWalletsWalletIdUsersUserId: {
     method: "PATCH",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id",
     responses: {
       200: c.type<z.infer<typeof updateUserWalletResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6263,7 +6263,7 @@ export const contract = c.router({
   },
   deleteV1AdminIdentityWalletsWalletIdUsersUserId: {
     method: "DELETE",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6280,7 +6280,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdUsersUserIdRestrict: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/restrict",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/restrict",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6297,7 +6297,7 @@ export const contract = c.router({
   },
   deleteV1AdminIdentityWalletsWalletIdUsersUserIdRestrict: {
     method: "DELETE",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/restrict",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/restrict",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6314,7 +6314,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdUsersUserIdUnrestrict: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/unrestrict",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/unrestrict",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6331,7 +6331,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdUsersUserIdBlock: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/block",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/block",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6348,7 +6348,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdUsersUserIdUnblock: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/users/{user_id}/unblock",
+    path: "/v1/admin/identity/wallets/:wallet_id/users/:user_id/unblock",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6365,7 +6365,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdEmailInitiateChange: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/email/initiate-change",
+    path: "/v1/admin/identity/wallets/:wallet_id/email/initiate-change",
     responses: {
       202: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6382,7 +6382,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdEmailVerify: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/email/verify",
+    path: "/v1/admin/identity/wallets/:wallet_id/email/verify",
     responses: {
       200: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6398,7 +6398,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdMobileNumberInitiateChange: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/mobile-number/initiate-change",
+    path: "/v1/admin/identity/wallets/:wallet_id/mobile-number/initiate-change",
     responses: {
       202: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6415,7 +6415,7 @@ export const contract = c.router({
   },
   postV1AdminIdentityWalletsWalletIdMobileNumberVerify: {
     method: "POST",
-    path: "/v1/admin/identity/wallets/{wallet_id}/mobile-number/verify",
+    path: "/v1/admin/identity/wallets/:wallet_id/mobile-number/verify",
     responses: {
       200: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6531,7 +6531,7 @@ export const contract = c.router({
   },
   deleteV1ProfilesAddressesId: {
     method: "DELETE",
-    path: "/v1/profiles/addresses/{id}",
+    path: "/v1/profiles/addresses/:id",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6547,7 +6547,7 @@ export const contract = c.router({
   },
   patchV1ProfilesAddressesId: {
     method: "PATCH",
-    path: "/v1/profiles/addresses/{id}",
+    path: "/v1/profiles/addresses/:id",
     responses: {
       200: c.type<z.infer<typeof updateAddressResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6664,7 +6664,7 @@ export const contract = c.router({
   },
   deleteV1ProfilesWalletWalletId: {
     method: "DELETE",
-    path: "/v1/profiles/wallet/{wallet_id}",
+    path: "/v1/profiles/wallet/:wallet_id",
     responses: {
       204: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6679,7 +6679,7 @@ export const contract = c.router({
   },
   deleteV1ProfilesWalletsWalletId: {
     method: "DELETE",
-    path: "/v1/profiles/wallets/{wallet_id}",
+    path: "/v1/profiles/wallets/:wallet_id",
     responses: {
       204: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6745,7 +6745,7 @@ export const contract = c.router({
   },
   postV1IdentityPushEventBatchOrigin: {
     method: "POST",
-    path: "/v1/identity/push-event-batch/{origin}",
+    path: "/v1/identity/push-event-batch/:origin",
     responses: {
       202: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6756,7 +6756,7 @@ export const contract = c.router({
   },
   postV1IdentityWebhooksOrigin: {
     method: "POST",
-    path: "/v1/identity/webhooks/{origin}",
+    path: "/v1/identity/webhooks/:origin",
     responses: {
       202: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6770,7 +6770,7 @@ export const contract = c.router({
   },
   getV1AdminPaymentsWalletsWalletIdUsersUserIdSettingsPayments: {
     method: "GET",
-    path: "/v1/admin/payments/wallets/{wallet_id}/users/{user_id}/settings/payments",
+    path: "/v1/admin/payments/wallets/:wallet_id/users/:user_id/settings/payments",
     responses: {
       200: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6786,7 +6786,7 @@ export const contract = c.router({
   },
   getV1AdminPaymentsWalletsWalletIdUsersUserIdSettings: {
     method: "GET",
-    path: "/v1/admin/payments/wallets/{wallet_id}/users/{user_id}/settings",
+    path: "/v1/admin/payments/wallets/:wallet_id/users/:user_id/settings",
     responses: {
       200: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6802,7 +6802,7 @@ export const contract = c.router({
   },
   getV1AdminPaymentsWalletsWalletIdUsersUserIdPaymentMethods: {
     method: "GET",
-    path: "/v1/admin/payments/wallets/{wallet_id}/users/{user_id}/payment-methods",
+    path: "/v1/admin/payments/wallets/:wallet_id/users/:user_id/payment-methods",
     responses: {
       200: c.type<z.infer<typeof adminListPaymentMethodsResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6823,7 +6823,7 @@ export const contract = c.router({
   },
   deleteV1AdminPaymentsWalletsWalletIdUsersUserIdPaymentMethods: {
     method: "DELETE",
-    path: "/v1/admin/payments/wallets/{wallet_id}/users/{user_id}/payment-methods",
+    path: "/v1/admin/payments/wallets/:wallet_id/users/:user_id/payment-methods",
     responses: {
       204: c.type<z.infer<typeof adminUserPaymentMethodsDelete204>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6839,7 +6839,7 @@ export const contract = c.router({
   },
   getV1AdminPaymentsWalletsWalletIdUsersUserIdOrders: {
     method: "GET",
-    path: "/v1/admin/payments/wallets/{wallet_id}/users/{user_id}/orders",
+    path: "/v1/admin/payments/wallets/:wallet_id/users/:user_id/orders",
     responses: {
       200: c.type<z.infer<typeof listOrdersResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -6866,7 +6866,7 @@ export const contract = c.router({
   },
   getV1AdminPaymentsWalletsWalletIdOrdersOrderId: {
     method: "GET",
-    path: "/v1/admin/payments/wallets/{wallet_id}/orders/{order_id}",
+    path: "/v1/admin/payments/wallets/:wallet_id/orders/:order_id",
     responses: {
       200: c.type<z.infer<typeof getOrderByIdResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6882,7 +6882,7 @@ export const contract = c.router({
   },
   postV1AdminPaymentsWalletsWalletIdLoyaltyPrograms: {
     method: "POST",
-    path: "/v1/admin/payments/wallets/{wallet_id}/loyalty/programs",
+    path: "/v1/admin/payments/wallets/:wallet_id/loyalty/programs",
     responses: {
       201: c.type<z.infer<typeof adminCreateLoyaltyProgramsResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6896,7 +6896,7 @@ export const contract = c.router({
   },
   postV1AdminPaymentsWalletsWalletIdLoyaltyPrograms2: {
     method: "POST",
-    path: "/v1/admin/payments/wallets/{wallet_id}/loyalty-programs",
+    path: "/v1/admin/payments/wallets/:wallet_id/loyalty-programs",
     responses: {
       201: c.type<z.infer<typeof adminCreateLoyaltyProgramsResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -6910,7 +6910,7 @@ export const contract = c.router({
   },
   postV1AdminPaymentsWalletsWalletIdLoyaltyProgramsColesTeamMembersWhitelist: {
     method: "POST",
-    path: "/v1/admin/payments/wallets/{wallet_id}/loyalty-programs/coles-team-members/whitelist",
+    path: "/v1/admin/payments/wallets/:wallet_id/loyalty-programs/coles-team-members/whitelist",
     responses: {
       200: c.type<
         z.infer<typeof adminColesTeamMembersCardsWhitelistResponse>
@@ -6928,7 +6928,7 @@ export const contract = c.router({
   },
   postV1AdminPaymentsWalletsWalletIdLoyaltyProgramsColesTeamMembersBlacklist: {
     method: "POST",
-    path: "/v1/admin/payments/wallets/{wallet_id}/loyalty-programs/coles-team-members/blacklist",
+    path: "/v1/admin/payments/wallets/:wallet_id/loyalty-programs/coles-team-members/blacklist",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7067,7 +7067,7 @@ export const contract = c.router({
   },
   getV1OrdersId: {
     method: "GET",
-    path: "/v1/orders/{id}",
+    path: "/v1/orders/:id",
     responses: {
       200: c.type<z.infer<typeof listOrdersResponse>>(),
       404: c.type<z.infer<typeof errorResponse>>(),
@@ -7097,7 +7097,7 @@ export const contract = c.router({
   },
   getV1PaymentMethodsId: {
     method: "GET",
-    path: "/v1/payment-methods/{id}",
+    path: "/v1/payment-methods/:id",
     responses: {
       200: c.type<z.infer<typeof getPaymentMethodByIdResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7122,7 +7122,7 @@ export const contract = c.router({
   },
   getV1PaymentMethodsBankCardsId: {
     method: "GET",
-    path: "/v1/payment-methods/bank-cards/{id}",
+    path: "/v1/payment-methods/bank-cards/:id",
     responses: {
       200: c.type<z.infer<typeof bankCardResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7136,7 +7136,7 @@ export const contract = c.router({
   },
   patchV1PaymentMethodsBankCardsId: {
     method: "PATCH",
-    path: "/v1/payment-methods/bank-cards/{id}",
+    path: "/v1/payment-methods/bank-cards/:id",
     responses: {
       200: c.type<z.infer<typeof updateBankCardPaymentMethodResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7152,7 +7152,7 @@ export const contract = c.router({
   },
   deleteV1PaymentMethodsBankCardsId: {
     method: "DELETE",
-    path: "/v1/payment-methods/bank-cards/{id}",
+    path: "/v1/payment-methods/bank-cards/:id",
     responses: {
       204: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7205,7 +7205,7 @@ export const contract = c.router({
   },
   getV1PaymentMethodsLoyaltyId: {
     method: "GET",
-    path: "/v1/payment-methods/loyalty/{id}",
+    path: "/v1/payment-methods/loyalty/:id",
     responses: {
       200: c.type<z.infer<typeof loyaltyCardWithLiveData>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7219,7 +7219,7 @@ export const contract = c.router({
   },
   deleteV1PaymentMethodsLoyaltyId: {
     method: "DELETE",
-    path: "/v1/payment-methods/loyalty/{id}",
+    path: "/v1/payment-methods/loyalty/:id",
     responses: {
       204: c.type<void>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7234,7 +7234,7 @@ export const contract = c.router({
   },
   patchV1PaymentMethodsLoyaltyId: {
     method: "PATCH",
-    path: "/v1/payment-methods/loyalty/{id}",
+    path: "/v1/payment-methods/loyalty/:id",
     responses: {
       200: c.type<z.infer<typeof updateLoyaltyCardResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7247,7 +7247,7 @@ export const contract = c.router({
   },
   postV1PaymentMethodsLoyaltyIdDefault: {
     method: "POST",
-    path: "/v1/payment-methods/loyalty/{id}/default",
+    path: "/v1/payment-methods/loyalty/:id/default",
     responses: {
       204: c.type<z.infer<typeof updateLoyaltyCardResponse>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7269,7 +7269,7 @@ export const contract = c.router({
   },
   getV1PaymentMethodsLoyaltyProgramsId: {
     method: "GET",
-    path: "/v1/payment-methods/loyalty/programs/{id}",
+    path: "/v1/payment-methods/loyalty/programs/:id",
     responses: {
       200: c.type<z.infer<typeof loyaltyProgram>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7346,7 +7346,7 @@ export const contract = c.router({
   },
   getV1LoyaltyProgramsId: {
     method: "GET",
-    path: "/v1/loyalty-programs/{id}",
+    path: "/v1/loyalty-programs/:id",
     responses: {
       200: c.type<z.infer<typeof loyaltyProgram>>(),
       401: c.type<z.infer<typeof errorResponse>>(),
@@ -7356,7 +7356,7 @@ export const contract = c.router({
   },
   getV1PaymentsQrQrCode: {
     method: "GET",
-    path: "/v1/payments/qr/{qr_code}",
+    path: "/v1/payments/qr/:qr_code",
     responses: {
       200: c.type<z.infer<typeof qrGetOrderResponse>>(),
       404: c.type<z.infer<typeof errorResponse>>(),
@@ -7368,7 +7368,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrQrCode: {
     method: "POST",
-    path: "/v1/payments/qr/{qr_code}",
+    path: "/v1/payments/qr/:qr_code",
     responses: {
       200: c.type<z.infer<typeof qrInitResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7381,7 +7381,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrAcknowledgeQrCode: {
     method: "POST",
-    path: "/v1/payments/qr/acknowledge/{qr_code}",
+    path: "/v1/payments/qr/acknowledge/:qr_code",
     responses: {
       200: c.type<z.infer<typeof qrAcknowledgeResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7396,7 +7396,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrAuthorizeQrCode: {
     method: "POST",
-    path: "/v1/payments/qr/authorize/{qr_code}",
+    path: "/v1/payments/qr/authorize/:qr_code",
     responses: {
       200: c.type<z.infer<typeof qrAuthorizeResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7411,7 +7411,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrFinalizeQrCode: {
     method: "POST",
-    path: "/v1/payments/qr/finalize/{qr_code}",
+    path: "/v1/payments/qr/finalize/:qr_code",
     responses: {
       200: c.type<z.infer<typeof qrFinalizeResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7426,7 +7426,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrAbortQrCode: {
     method: "POST",
-    path: "/v1/payments/qr/abort/{qr_code}",
+    path: "/v1/payments/qr/abort/:qr_code",
     responses: {
       200: c.type<z.infer<typeof abortOrderResponse>>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7441,7 +7441,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrV1WalletCallbackQrQrCodeCancelled: {
     method: "POST",
-    path: "/v1/payments/qr/v1/wallet/callback/qr/{qr_code}/cancelled",
+    path: "/v1/payments/qr/v1/wallet/callback/qr/:qr_code/cancelled",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7463,7 +7463,7 @@ export const contract = c.router({
   },
   postV1PaymentsQrV1WalletCallbackQrQrCodeRefund: {
     method: "POST",
-    path: "/v1/payments/qr/v1/wallet/callback/qr/{qr_code}/refund",
+    path: "/v1/payments/qr/v1/wallet/callback/qr/:qr_code/refund",
     responses: {
       204: c.type<void>(),
       400: c.type<z.infer<typeof errorResponse>>(),
@@ -7485,7 +7485,7 @@ export const contract = c.router({
   },
   getV2PaymentsQrQrCode: {
     method: "GET",
-    path: "/v2/payments/qr/{qr_code}",
+    path: "/v2/payments/qr/:qr_code",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2OrderSummaryResponse>>(),
     },
@@ -7496,7 +7496,7 @@ export const contract = c.router({
   },
   postV2PaymentsQrQrCodeClaim: {
     method: "POST",
-    path: "/v2/payments/qr/{qr_code}/claim",
+    path: "/v2/payments/qr/:qr_code/claim",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2ClaimOrderResponse>>(),
     },
@@ -7508,7 +7508,7 @@ export const contract = c.router({
   },
   postV2PaymentsQrQrCodeUpdate: {
     method: "POST",
-    path: "/v2/payments/qr/{qr_code}/update",
+    path: "/v2/payments/qr/:qr_code/update",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2UpdateOrderResponse>>(),
     },
@@ -7520,7 +7520,7 @@ export const contract = c.router({
   },
   postV2PaymentsQrQrCodeAuthorize: {
     method: "POST",
-    path: "/v2/payments/qr/{qr_code}/authorize",
+    path: "/v2/payments/qr/:qr_code/authorize",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2AuthorizeResponse>>(),
     },
@@ -7532,7 +7532,7 @@ export const contract = c.router({
   },
   postV2PaymentsQrQrCodeFinalize: {
     method: "POST",
-    path: "/v2/payments/qr/{qr_code}/finalize",
+    path: "/v2/payments/qr/:qr_code/finalize",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2FinalizeResponse>>(),
     },
@@ -7544,7 +7544,7 @@ export const contract = c.router({
   },
   postV2PaymentsQrQrCodeAbort: {
     method: "POST",
-    path: "/v2/payments/qr/{qr_code}/abort",
+    path: "/v2/payments/qr/:qr_code/abort",
     responses: {
       200: c.type<z.infer<typeof responsesQrV2AbortOrderResponse>>(),
     },
@@ -7574,7 +7574,7 @@ export const contract = c.router({
   },
   getV1SystemHealthApi: {
     method: "GET",
-    path: "/v1/system/health/{api}",
+    path: "/v1/system/health/:api",
     responses: {
       200: c.type<z.infer<typeof systemHealthResponse>>(),
       500: c.type<z.infer<typeof dispatcher500>>(),
@@ -7586,7 +7586,7 @@ export const contract = c.router({
   },
   getV1SystemDebugApi: {
     method: "GET",
-    path: "/v1/system/debug/{api}",
+    path: "/v1/system/debug/:api",
     responses: {
       200: c.type<z.infer<typeof serviceDebugInfoResponse>>(),
       401: c.type<z.infer<typeof docErrorResponse>>(),
