@@ -222,7 +222,7 @@ export function parseOperation(operation: OperationDetail, openAPISpec: TODO) {
         console.log("No content for response", response);
         return {
           statusCode: statusCode,
-          body: "z.void()",
+          body: "c.type<void>()",
         };
       }
 
@@ -239,20 +239,32 @@ export function parseOperation(operation: OperationDetail, openAPISpec: TODO) {
           if (refs[refKey]) {
             return {
               statusCode,
-              body: refKey,
+              body: `c.type<z.infer<typeof ${refKey}>>()`,
             };
           }
 
-          refs[refKey] = parseSchema(content.schema, openAPISpec);
+          refs[refKey] = parseSchema(content.schema, openAPISpec) ?? "z.void()";
 
           return {
             statusCode,
-            body: refKey,
+            body: `c.type<z.infer<typeof ${refKey}>>()`,
           };
         } else {
+          // add random response name to refs
+          const refKey = camelCase(operation.operationId + statusCode);
+
+          if (refs[refKey]) {
+            return {
+              statusCode,
+              body: `c.type<z.infer<typeof ${refKey}>>()`,
+            };
+          }
+
+          refs[refKey] = parseSchema(content.schema, openAPISpec) ?? "z.void()";
+
           return {
             statusCode,
-            body: parseSchema(content.schema, openAPISpec),
+            body: `c.type<z.infer<typeof ${refKey}>>()`,
           };
         }
       }
